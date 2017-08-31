@@ -1,4 +1,4 @@
-# openstack-create-repos
+# openstack-repos
 Generates all OpenStack repositories
 
 ```
