@@ -12,34 +12,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-# Modified by Robin Černín (rcernin@redhat.com)
-# ➜  openstack diff generate-gitmodules generate-repos 
-# 19,23c19
-# < TEMPLATE = """[submodule "%s"]
-# < \tpath = %s
-# < \turl = https://review.openstack.org/%s.git
-# < \tbranch = .
-# < """
-# ---
-# > TEMPLATE = "git://git.openstack.org/%s.git\n"
-# 49c45
-# < def gen_gitmodules(projects):
-# ---
-# > def gen_gitrepos(projects):
-# 51c47
-# <     with open(".gitmodules", 'w') as f:
-# ---
-# >     with open("gitrepos", 'w') as f:
-# 54c50
-# <             f.write(TEMPLATE % (name, name, p))
-# ---
-# >             f.write(TEMPLATE % (p))
-# 59c55
-# <     gen_gitmodules(projects)
-# ---
-# >     gen_gitrepos(projects)
-
-
 import json
 
 import requests
