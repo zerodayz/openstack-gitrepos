@@ -16,7 +16,7 @@ import json
 
 import requests
 
-TEMPLATE = "git://git.openstack.org/%s.git\n"
+TEMPLATE = "https://opendev.org/%s.git\n"
 
 # only return projects starting with openstack
 CONFIG = ("https://review.openstack.org:443/projects/?p=openstack")
