@@ -13,8 +13,8 @@
 # under the License.
 
 import json
-
 import requests
+import os
 
 TEMPLATE = "https://opendev.org/%s.git\n"
 
@@ -44,6 +44,8 @@ def find_integrated_gate_projects():
 
 def gen_gitrepos(projects):
     projects = sorted(projects)
+    if os.path.exists('gitrepos'):
+       os.rename('gitrepos', 'gitrepos-old')
     with open("gitrepos", 'w') as f:
         for p in projects:
             ns, name = p.split('/')
